@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Disable alert confirm prompt",
+  "author": "Antony Lesuisse",
+  "version": "1.0",
+  "description": "
+Disable all focus stealing popups and confirmation loops.
+
+Alert is replaced by console.log. Prompt by console.log and return
+default value. Confirm by console.log and return true;
+
+Warning: this might break some old website.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["disable.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
