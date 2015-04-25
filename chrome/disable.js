@@ -1,5 +1,5 @@
-// Tranform alert, confirm and prompt into console.log()
 function main() {
+    // Tranform alert, confirm and prompt into console.log()
     var patch = {
         "alert": function (msg) {
             console.log("alert: " + msg);
@@ -19,6 +19,14 @@ function main() {
             window[i].disabled = true;
         }
     }
+
+    // disable onbeforeunload
+    Object.defineProperty(window, "onbeforeunload", {
+        configurable: false,
+        enumerable: true,
+        get: function() { return undefined;},
+        set: function(value) { console.log("onbeforeload.ingored:" + value)},
+    })
 }
 
 // Inject code in window

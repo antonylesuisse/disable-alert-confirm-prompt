@@ -1,15 +1,15 @@
 {
   "manifest_version": 2,
-  "name": "Disable alert confirm prompt",
+  "name": "Disable focus stealing",
   "author": "Antony Lesuisse",
   "version": "1.0",
   "description": "
 Disable all focus stealing popups and confirmation loops.
 
-Alert is replaced by console.log. Prompt by console.log and return
-default value. Confirm by console.log and return true;
+Replace alert, confirm, onbeforeunload, prompt by console.log and default
+return values.
 
-Warning: this might break some old website.",
+Warning: this could break some websites.",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
